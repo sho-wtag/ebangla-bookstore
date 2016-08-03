@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from bookstore.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r)
+    url(r'^add-book$', book_view.add_book),
+    url(r'^edit-book/(?P<book_id>\d+)$', book_view.edit_book),
+    url(r'^delete-book/(?P<book_id>\d+)$', book_view.delete_book),
+
 ]
+
