@@ -31,3 +31,9 @@ class Book(models.Model):
     def __str__(self):
         return self.name
 
+class User_Wishlist(models.Model):
+    created_by = models.ForeignKey(User)
+    books = models.ManyToManyField(Book, null=True)
+
+    def __str__(self):
+        return self.created_by
